@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SIMS</title>
+
+	<!-- CSS (load bootstrap from a CDN) -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<!--custom css 
+	<link rel="stylesheet" type="text/css" href="./css/custom.css">
+	-->
+	<style>
+		body{
+			background-color: whitesmoke;
+			height: 100%;
+			}
+		.main-header{
+			padding-top: 120px;
+			padding-bottom: 90px;
+			background: linear-gradient(45deg, #6e77a8, #0f7699);
+		}
+
+		h1{
+			color: white;
+		}
+
+		footer{
+			background-color: #0c0c0c;
+		    padding: 20px 0 10px;
+		    color: #c3c3c3;
+		    display: block;
+		    position: relative;
+		    bottom: 0;
+			width: 100%;
+		    text-align: center;
+		}
+	</style>
+
+</head>
+<body>
+	<header class="main-header">
+		<h1 class="text-center">Student Information Management System (SIMS)</h1>
+	</header>
+
+	<!--<section class="container">
+		
+	</section> -->
+
+	<main class="container">
+		<%- include('partials/navbar') %>
+			<br>
+			<br>
+			<h1 align="center" style="color: black">All Students</h1>>
+			<table class="table table-inverse">
+			  <thead>
+			    <tr>
+			      <th>#</th>
+			      <th>First Name</th>
+			      <th>Last Name</th>
+			      <th>Reg No.</th>
+			      <th>Department</th>
+			      <th>Email</th>
+			      <th>Gender</th>
+			      <th>Action</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  	<% for(let i=0; i<students.length;i++){ %>
+			  		
+				    <tr>
+				      <th scope="row"><%=i+1 %></th>
+				      	<td><%= students[i].firstname %></td>
+				      	<td><%= students[i].lastname %></td>
+				      	<td><%= students[i].regno %></td>
+				      	<td><%= students[i].dept %></td>
+				      	<td><%= students[i].email %></td>
+				      	<td><%= students[i].sex %></td>
+				      	<td>
+					      	<span><a href="/addStudent/:id"><button class="btn btn-warning">Edit</button></a></span>
+					      	<span><button class="btn btn-danger">Delete</button></span>
+				      	</td>
+				    </tr>
+
+			  	<% } %>
+			    
+			  </tbody>
+			</table>
+	</main>
+	
+	<br>
+	<br>
+	<div>
+		<%- include('partials/footer') %>
+	</div>
+</body>
+</html>

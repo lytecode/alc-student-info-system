@@ -1,0 +1,31 @@
+{
+  "name": "student-management-system",
+  "version": "1.0.0",
+  "description": "Simple CRUD implementation ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Andela",
+    "CRUD",
+    "Nodejs",
+    "APIs",
+    "Student",
+    "Google",
+    "Udacity",
+    "PWA",
+    "Intermediate",
+    "Web-development"
+  ],
+  "author": "Mbonu Basil",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mongoose": "^4.12.5",
+    "nodemon": "^1.12.1"
+  }
+}
