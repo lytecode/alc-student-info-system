@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname +'/views/css'));
 
 //connect to mongodb
-mongoose.connect('mongodb://localhost:27017/studentrecord');
+mongoose.connect('mongodb://alc:12345@ds257485.mlab.com:57485/student-record');//('mongodb://localhost:27017/studentrecord');
 
 //mongoose on connect
 mongoose.connection.on('connected', function(){
