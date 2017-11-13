@@ -22,7 +22,7 @@ mongoose.connect('mongodb://alc:12345@ds257485.mlab.com:57485/student-record');/
 
 //mongoose on connect
 mongoose.connection.on('connected', function(){
-	console.log('Connected successfully to mongodb @ 27017');
+	console.log('Connected successfully to mongodb @ 57485');
 });
 
 mongoose.connection.on('error', function(err){

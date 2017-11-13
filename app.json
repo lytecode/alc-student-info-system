@@ -1,3 +1,5 @@
 {
-	
+	"name": "Alc student Information Management System",
+	"repository": "https://github.com/mbonubasil/alc-student-info-mgt-system",
+	"keywords": ["node", "express", "static"]
 }

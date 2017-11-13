@@ -18,10 +18,14 @@
     "Intermediate",
     "Web-development"
   ],
-  "engines":{
+  "engines": {
     "node": "8.9.1"
   },
-  "author":  "Mbonu Basil",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mbonubasil/alc-student-info-mgt-system"
+  },
+  "author": "Mbonu Basil",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
