@@ -8,7 +8,7 @@ let Student = require('./models/student');
 //create express app
 let app = express();
 //set our port
-let port = 3500;
+//let port = 3500;
 
 //View Engine
 //app.set('views', path.join(__dirname, 'views'));
@@ -134,6 +134,6 @@ app.delete('/student/:id', function(req, res, next){
 
 
 
-app.listen(port, ()=> {
-	console.log('App started on port '+port);
+app.listen(process.env.PORT || 5000, ()=> {
+	console.log('App started ');
 });
