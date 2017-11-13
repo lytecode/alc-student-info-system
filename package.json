@@ -20,8 +20,8 @@
   ],
   "engines":{
     "node": "8.9.1"
-  }
-  "author": "Mbonu Basil",
+  },
+  "author":  "Mbonu Basil",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
