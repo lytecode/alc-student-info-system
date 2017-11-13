@@ -4,7 +4,7 @@
   "description": "Simple CRUD implementation ",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "keywords": [
     "Andela",
@@ -18,6 +18,9 @@
     "Intermediate",
     "Web-development"
   ],
+  "engines":{
+    "node": "8.9.1"
+  }
   "author": "Mbonu Basil",
   "license": "ISC",
   "dependencies": {
