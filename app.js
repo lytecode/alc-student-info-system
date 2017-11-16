@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname +'/views/css'));
 
 //connect to mongodb
-mongoose.connect('mongodb://alc:12345@ds257485.mlab.com:57485/student-record');//('mongodb://localhost:27017/studentrecord');
+mongoose.connect('mongodb://alc:12345@ds257485.mlab.com:57485/student-record'); //('mongodb://localhost:27017/studentrecord');
 
 //mongoose on connect
 mongoose.connection.on('connected', function(){
@@ -36,7 +36,7 @@ app.use(cors());
 let urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 
-//retrieve all students: used to be /students
+//retrieve all students: used to be /students {Home Page}
 app.get('/', function(req, res){
 	//find all students in the DB
 	Student.find(function(err, students){
@@ -44,11 +44,19 @@ app.get('/', function(req, res){
 			res.send(err);
 		}
 		else{
-			let data = students;
+			//let data = students;
 			//console.log('students data', data);
-			res.render('index', {students: data});
+			res.render('index', {students: students});
 		}
 	});
+});
+
+
+app.get('/about', function(err, res){
+	if(err){
+		console.log("Start the server: ", err);
+	}
+	res.render('about');
 });
 
 
@@ -85,50 +93,54 @@ app.post('/student', urlencodedParser, function(req, res){
 
 
 
-//get one student
+//get one student for Editing
 app.get('/student/:id', function(req, res){
 	Student.findById(req.params.id, function(err, student){
-		if(err)
-			res.send(err)
-
-		res.render(student);
+		if(err){
+			console.log("cannot find student: ", err);
+		}
+		else{
+			res.render('editStudent', {student: student});
+		}
 	});
 });
 
 
-//update srudent's record
-app.put('/student/:id', (req, res)=> {
-	Student.findById(req.params.id, (err, student)=> {
-		if(err)
-			res.json(err);
+//update srudent's record, after editing
+app.post('/student/:id', urlencodedParser, (req, res)=> {
+	Student.findByIdAndUpdate(req.params.id, 
+		{$set: {
+				firstname: req.body.firstname,
+			    lastname:  req.body.lastname,
+			    regno: req.body.regno,
+			    email: req.body.email,
+			    dept: req.body.dept,
+			    sex: req.body.sex
+			}
+		},
+		{new: true}, function(err, student){
+			if(err){
+				console.log("Error: cannot update; ", err);//res.json(err);
+				res.render('editStudent', {student: req.body});
+			}
 
-		//update student data
-		student.firstname = req.body.firstname;
-	    student.lastname =  req.body.lastname;
-	    student.regno = req.body.regno;
-	    student.email = req.body.email;
-	    student.dept = req.body.dept;
-	    student.sex = req.body.sex;
+	    	console.log("student record updated successfully ");
 
-	    student.save((err) => {
-	    	if(err)
-	    		res.json(err);
-
-	    	res.json(student);
-	    });
-
+	    	res.render('editStudent', {student: req.body});
 	});
 });
 
 
 //delete student
-app.delete('/student/:id', function(req, res, next){
-	Student.findByIdAndRemove(req.params.id, (err, student)=> {
-		if(err)
-			res.json(err);
+app.post('/student/delete/:id',  function(req, res){
+	Student.findByIdAndRemove( {_id: req.params.id}, function(err) {
+		if(err){
+			console.log("Delete error: ", err);
+		}
 
-		res.json({message: 'Student records deleted sucessfully'})
-	})
+		console.log("Student deleted successful");
+		res.redirect("/");
+	});
 	
 });
 

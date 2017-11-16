@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SIMS</title>
+
+	<!-- CSS (load bootstrap from a CDN) -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<!--custom css 
+	<link rel="stylesheet" type="text/css" href="./css/custom.css">
+	-->
+	<style>
+		body{
+			background-color: whitesmoke;
+			height: 100%;
+			}
+		.main-header{
+			padding-top: 120px;
+			padding-bottom: 90px;
+			background: linear-gradient(45deg, #6e77a8, #0f7699);
+		}
+
+		h1{
+			color: white;
+		}
+
+		footer{
+			background-color: #0c0c0c;
+		    padding: 20px 0 10px;
+		    color: #c3c3c3;
+		    display: block;
+		    position: relative;
+		    bottom: 0;
+			width: 100%;
+		    text-align: center;
+		}
+		
+	</style>
+
+</head>
+<body>
+	<header class="main-header">
+		<h1 class="text-center">About SIMS</h1>
+	</header>
+
+	<!--<section class="container">
+		
+	</section> -->
+
+	<main class="container">
+		<%- include('partials/navbar') %>
+			
+
+
+		<p>SIMS is the acronym for <b>Student Information Management System</b> <br>
+			It is a written using the following technologies:
+			<ul>
+				<li>Nodejs</li>
+				<li>Expressjs</li>
+				<li>MongoDB</li>
+				<li>EJS templating Engine</li>
+				<li>and a couple of other Middlewares</li>
+			</ul>
+		</p>
+	
+		<br>
+
+		<p>SIMS is implemented to show a basic CRUD operations using the above named techologies. <br>
+
+			Many exceptions have not been handled yet. So, expect further modifications to this application.  
+		</p>
+
+		
+	
+	</main>
+	
+	<br>
+	<br>
+	<div>
+		<%- include('partials/footer') %>
+	</div>
+</body>
+</html>
