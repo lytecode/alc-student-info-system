@@ -37,7 +37,15 @@
 			width: 100%;
 		    text-align: center;
 		}
-		
+
+		td div{
+			display: inline-flex;
+		}
+
+		div a{
+			padding-right: 10px;
+		}
+
 	</style>
 
 </head>
@@ -80,14 +88,15 @@
 				      	<td><%= students[i].email %></td>
 				      	<td><%= students[i].sex %></td>
 				      	<td>
-					      	<span><a href="/student/<%= students[i]._id %>"><button class="btn btn-warning">Edit</button></a></span>
+					      	<div>
+					      	<a href="/student/<%= students[i]._id %>"><button class="btn btn-warning">Edit</button></a>
 
-					      	<span>
+					      	
 					      		<form action="/student/delete/<%= students[i]._id %>" method="POST" >
 					      			<button type="submit" class="btn btn-danger">Delete</button>
 					      		</form>
-					      	</span>
-
+					      	
+					        </div>
 				      	</td>
 				    </tr>
 
