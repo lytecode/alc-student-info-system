@@ -7,7 +7,7 @@
 	<title>SIMS</title>
 
 	<!-- CSS (load bootstrap from a CDN) -->
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 	<!--custom css 
 	<link rel="stylesheet" type="text/css" href="./css/custom.css">
@@ -89,11 +89,11 @@
 				      	<td><%= students[i].sex %></td>
 				      	<td>
 					      	<div>
-					      	<a href="/student/<%= students[i]._id %>"><button class="btn btn-warning">Edit</button></a>
+					      	<a href="/student/<%= students[i]._id %>"><button class="btn btn-warning glyphicon glyphicon-edit"></button></a>
 
 					      	
 					      		<form action="/student/delete/<%= students[i]._id %>" method="POST" >
-					      			<button type="submit" class="btn btn-danger">Delete</button>
+					      			<button type="submit" class="btn btn-danger glyphicon glyphicon-remove"></button>
 					      		</form>
 					      	
 					        </div>

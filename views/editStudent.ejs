@@ -7,7 +7,7 @@
 	<title>Edit | SIMS</title>
 
 	<!-- CSS (load bootstrap from a CDN) -->
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 	<!--custom css 
 	<link rel="stylesheet" type="text/css" href="./css/custom.css">
@@ -50,24 +50,35 @@
 		<br>
 		<form  method="POST" action="/student/<%= student._id %>">
 		  <div class="form-group">
-		    <input type="text" class="form-control"  name="firstname" value="<%= student.firstname %>" placeholder="First Name">
+		    <input type="text" class="form-control"  name="firstname" value="<%= student.firstname %>" placeholder="First Name" required>
 		  </div>
 		  <div class="form-group">
-		    <input type="text" class="form-control" name="lastname" value="<%= student.lastname %>" placeholder="Last Name">
+		    <input type="text" class="form-control" name="lastname" value="<%= student.lastname %>" placeholder="Last Name" required>
 		  </div>
 		  <div class="form-group">
-		    <input type="text" class="form-control" name="regno" value="<%= student.regno %>" placeholder="Registration Number">
+		    <input type="text" class="form-control" name="regno" value="<%= student.regno %>" placeholder="Registration Number" required>
 		  </div>
 		  <div class="form-group">
-		    <input type="text" class="form-control" name="dept" value="<%= student.dept %>" placeholder="Department">
+		    <input type="text" class="form-control" name="dept" value="<%= student.dept %>" placeholder="Department" required>
 		  </div>
 		   <div class="form-group">
-		    <input type="text" class="form-control" name="email" value="<%= student.email %>" placeholder="Email">
+		    <input type="email" class="form-control" name="email" value="<%= student.email %>" placeholder="Email" required>
 		  </div>
-		  <div class="form-group">
-		    <input type="text" class="form-control" name="sex" value="<%= student.sex %>" placeholder="Sex">
-		  </div>
-		  <button type="submit" class="btn btn-success">Update</button>
+		  <!-- <div class="form-group">
+		    <input type="text" class="form-control" name="sex" value="<%= student.sex %>" placeholder="Sex" required>
+		  </div> -->
+		   <div class="form-group">
+		    <select class="form-control" name="sex" >
+		    	<% if(student.sex === 'Male'){   %>
+		    			<option value="Male" selected>Male</option>
+		    			<option value="Female">Female</option>
+		    	<% }else{  %>
+		    			<option value="Female" selected>Female</option>
+		    			<option value="Male" >Male</option>
+		    	<% } %>
+		    	<!--<option selected>Sex</option> -->	      		
+	      	</select>
+		  <button type="submit" class="btn btn-success glyphicon glyphicon-send"> Update</button>
 		</form>
 	</section>
 

@@ -60,10 +60,12 @@ app.get('/about', function(err, res){
 });
 
 
+
 //get the form
 app.get('/student', function(req, res){
 	res.render('addStudent'); 
 });
+
 
 //add a student
 app.post('/student', urlencodedParser, function(req, res){
@@ -126,7 +128,7 @@ app.post('/student/:id', urlencodedParser, (req, res)=> {
 
 	    	console.log("student record updated successfully ");
 
-	    	res.render('editStudent', {student: req.body});
+	    	res.render('update-success');
 	});
 });
 
