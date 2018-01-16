@@ -14,7 +14,7 @@
 ... Delete Student's details.
 
 
-#### This app is hosted on [heroku](http://infosystem.herokuapp.com/)
+#### This app is hosted on heroku; here is the url http://infosystem.herokuapp.com
 
 
 #### Refer to the About page for more details about the technologies used.
