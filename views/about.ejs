@@ -18,8 +18,8 @@
 			height: 100%;
 			}
 		.main-header{
-			padding-top: 120px;
-			padding-bottom: 90px;
+			padding-top: 10px;
+			padding-bottom: 10px;
 			background: linear-gradient(45deg, #6e77a8, #0f7699);
 		}
 
@@ -27,12 +27,16 @@
 			color: white;
 		}
 
+		p, ul{
+			font-size: 20px;
+		}
+
 		footer{
 			background-color: #0c0c0c;
 		    padding: 20px 0 10px;
 		    color: #c3c3c3;
 		    display: block;
-		    position: relative;
+		    position: fixed;
 		    bottom: 0;
 			width: 100%;
 		    text-align: center;
@@ -54,9 +58,9 @@
 		<%- include('partials/navbar') %>
 			
 
-
+		<br><br>
 		<p>SIMS is the acronym for <b>Student Information Management System</b> <br>
-			It is a written using the following technologies:
+			This project was written using the following technologies:
 			<ul>
 				<li>Nodejs</li>
 				<li>Expressjs</li>
@@ -71,14 +75,10 @@
 		<p>SIMS is implemented to show a basic CRUD operations using the above named techologies. <br>
 
 			Many exceptions have not been handled yet. So, expect further modifications to this application.  
-		</p>
-
-		
-	
+		</p>	
 	</main>
 	
-	<br>
-	<br>
+	<!--add the footer -->
 	<div>
 		<%- include('partials/footer') %>
 	</div>

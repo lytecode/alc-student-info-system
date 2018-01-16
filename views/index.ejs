@@ -18,13 +18,16 @@
 			height: 100%;
 			}
 		.main-header{
-			padding-top: 120px;
-			padding-bottom: 90px;
+			padding: 50px 0 50px;
 			background: linear-gradient(45deg, #6e77a8, #0f7699);
 		}
 
 		h1{
 			color: white;
+		}
+
+		ul, p{
+			font-size: 20px;
 		}
 
 		footer{
@@ -44,6 +47,11 @@
 
 		div a{
 			padding-right: 10px;
+		}
+
+		.table{
+			width: 100%;
+			overflow-x: auto;                                                 
 		}
 
 	</style>
@@ -89,10 +97,9 @@
 				      	<td><%= students[i].sex %></td>
 				      	<td>
 					      	<div>
-					      	<a href="/student/<%= students[i]._id %>"><button class="btn btn-warning glyphicon glyphicon-edit"></button></a>
+					      		<a href="/student/<%= students[i]._id %>"><button class="btn btn-warning glyphicon glyphicon-edit"></button></a>
 
-					      	
-					      		<form action="/student/delete/<%= students[i]._id %>" method="POST" >
+					      		<form onsubmit="return confirm('Are you sure you want to delete?');" action="/student/delete/<%= students[i]._id %>" method="POST">
 					      			<button type="submit" class="btn btn-danger glyphicon glyphicon-remove"></button>
 					      		</form>
 					      	

@@ -18,7 +18,8 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname +'/views/css'));
 
 //connect to mongodb
-mongoose.connect('mongodb://alc:12345@ds257485.mlab.com:57485/student-record'); //('mongodb://localhost:27017/studentrecord');
+//mongoose.connect('mongodb://alc:12345@ds257485.mlab.com:57485/student-record'); //for production
+mongoose.connect('mongodb://localhost:27017/studentrecord'); //for local
 
 //mongoose on connect
 mongoose.connection.on('connected', function(){
@@ -125,8 +126,7 @@ app.post('/student/:id', urlencodedParser, (req, res)=> {
 				console.log("Error: cannot update; ", err);//res.json(err);
 				res.render('editStudent', {student: req.body});
 			}
-
-	    	console.log("student record updated successfully ");
+	    	//console.log("student record updated successfully ");
 
 	    	res.render('update-success');
 	});
@@ -139,8 +139,7 @@ app.post('/student/delete/:id',  function(req, res){
 		if(err){
 			console.log("Delete error: ", err);
 		}
-
-		console.log("Student deleted successful");
+		//console.log("Student deleted successful");
 		res.redirect("/");
 	});
 	
